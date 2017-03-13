@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/vnop/doOrDont/issues"
   },
-  "homepage": "https://github.com/vnop/doOrDont#readme"
+  "homepage": "https://github.com/vnop/doOrDont#readme",
+  "dependencies": {
+    "express": "^4.15.2"
+  }
 }
