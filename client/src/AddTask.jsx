@@ -10,12 +10,14 @@ class AddTask extends React.Component {
   }
 
   render() {
-    return (<div>
-      <input type="text" placeholder="task" />
-      <input type="text" placeholder="details" />
-      <button className='btn btn-success'>Add Task</button>
-      </div>)
+    return (
+      <div>
+        <input type="text" placeholder="task" />
+        <input type="text" placeholder="details" />
+        <button className='btn btn-success'>Add Task</button>
+      </div>
+    )
   }
 }
 
-export { AddTask };
+export { AddTask }

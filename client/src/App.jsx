@@ -32,11 +32,13 @@ class App extends React.Component {
   }
 
   render() {
-    return (<div>
-      <h1>Do List</h1>
-      <AddTask addNewTask={this.state.tasks[0]}/>
-      <TaskList tasks={this.state.tasks}/>
-      </div>)
+    return (
+      <div>
+        <h1>Do List</h1>
+        <AddTask addNewTask={this.state.tasks[0]} />
+        <TaskList tasks={this.state.tasks} />
+      </div>
+    )
   }
 }
 

@@ -1,9 +1,13 @@
 import React from 'react';
 
 const Task = ({ task }) => {
-  return (<li>
-    Task: {task.task}
-    </li>)
+  return (
+    <div>
+      <li>
+      Task: {task.task}
+      </li>
+    </div>
+  )
 };
 
-export { Task };
+export { Task }

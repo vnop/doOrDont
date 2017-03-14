@@ -7,14 +7,17 @@ class TaskList extends React.Component {
   }
 
   render() {
-    return (<div>
-      <ul>
-        {this.props.tasks.map(task => {
-          <Task task={task} />
-          })}
-      </ul>
-      </div>)
+    return (
+      <div>
+        <ul>
+          {this.props.tasks.map(task => (
+            <Task task={task} />
+            )
+          )}
+        </ul>
+      </div>
+    )
   }
 }
 
-export { TaskList };
+export { TaskList }
