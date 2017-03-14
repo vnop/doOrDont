@@ -1,9 +1,11 @@
 var express = require('express');
 var path = require('path');
+var app = express();
 var bodyParser = require('body-parser');
 var appRouter = require('./routes/route');
 
-var app = express();
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({exended: true}));
 
 app.use(function(req, res, next) {
   res.header('Access-Control-Allow-Origin', '*');
@@ -11,11 +13,7 @@ app.use(function(req, res, next) {
   next();
 });
 
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({exended: true}));
-
-// double check on webpack if static files is needed
-// app.use(express.static(path.join(__dirname, '/client')));
+app.use(express.static(path.join(__dirname, '../client')));
 
 app.use(appRouter);
 
