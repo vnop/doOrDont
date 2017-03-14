@@ -1,5 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import $ from 'jquery';
+import { Router, Route, Redirect } from 'react-router';
 
 class App extends React.Component {
   constructor(props) {
