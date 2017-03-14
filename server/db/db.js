@@ -1,7 +1,6 @@
 var mongoose = require('mongoose');
-var uri = 'mongodb://localhost/doOrDont';
 
-mongoose.connect(uri);
+mongoose.connect('mongodb://localhost/doOrDont');
 
 var db = mongoose.connection;
 
