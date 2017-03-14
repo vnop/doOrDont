@@ -1,9 +1,12 @@
 var express = require('express');
 var path = require('path');
-var app = express();
+var db = require('./db/db.js');
+var morgan = require('morgan');
 var bodyParser = require('body-parser');
 var appRouter = require('./routes/route');
+var app = express();
 
+app.use(morgan('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({exended: true}));
 
