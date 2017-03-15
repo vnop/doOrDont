@@ -28,5 +28,15 @@ module.exports = {
       console.log('Delete task from DB successful: ', task);
       res.end(JSON.stringify(task));
     });
+  },
+
+  getTasks: function(req, res) {
+    Task.find((err, tasks) => {
+      if (err) {
+        return console.log('DB retrieval error: ', err);
+      }
+      console.log('Success retrieving from DB: ', tasks);
+      res.send(tasks);
+    });
   }
 };

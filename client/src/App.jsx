@@ -7,15 +7,15 @@ import { TaskList } from './TaskList.jsx';
 
 var dummyData = [
   {
-    task: 'work on client side',
+    task: 'DB is down',
     id: 1
   },
   {
-    task: 'work on server side',
+    task: 'check DB',
     id: 2
   },
   {
-    task: 'work on database',
+    task: 'check request',
     id: 3
   }
 ];
@@ -26,6 +26,24 @@ class App extends React.Component {
     this.state = {
       tasks: dummyData
     }
+  }
+
+  componentWillMount() {
+    var self = this;
+    $.ajax({
+      url: 'http://localhost:3000/tasks',
+      method: 'GET',
+      dataType: 'json',
+      success: (data) => {
+        console.log('success: ', data);
+        self.setState({
+          tasks: data
+        });
+      },
+      error: (err, status) => {
+        console.log('error: ', err);
+      }
+    });
   }
 
   addNewTask(task) {
@@ -51,7 +69,7 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <h1>Do List</h1>
+        <h1>Get It Done List</h1>
         <AddTask addNewTask={this.addNewTask.bind(this)} />
         <TaskList tasks={this.state.tasks} removeTask={this.removeTask.bind(this)}/>
       </div>

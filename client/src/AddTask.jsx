@@ -29,7 +29,7 @@ class AddTask extends React.Component {
     return (
       <div>
         <input type="text" placeholder="task" value={this.state.task} onChange={this.handleTask.bind(this)}/>
-        <button className='btn btn-success' onClick={this.addTask.bind(this)}>Add Task</button>
+        <button className='btn btn-primary' onClick={this.addTask.bind(this)}>Add Task</button>
       </div>
     )
   }
