@@ -6,12 +6,19 @@ class TaskList extends React.Component {
     super(props)
   }
 
+  deleteTask(todo) {
+    this.props.removeTask(todo);
+  }
+
   render() {
     return (
       <div>
         <ul>
           {this.props.tasks.map(task => (
-            <Task task={task} />
+            <Task
+            task={task}
+            deleteTask={this.deleteTask.bind(this)}
+            />
             )
           )}
         </ul>

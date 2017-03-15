@@ -1,9 +1,9 @@
 import React from 'react';
 
-const Task = ({ task }) => {
+const Task = ({ task, deleteTask }) => {
   return (
     <div>
-      <li>
+      <li onClick={function(e) { return deleteTask(task.task); }}>
       Task: {task.task}
       </li>
     </div>
